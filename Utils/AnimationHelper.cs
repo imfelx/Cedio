@@ -14,7 +14,7 @@ class AnimationHelper
       counter++;
       Thread.Sleep(100);
 
-      if (Console.KeyAvailable && InputHelper.LeerTecla(ConsoleKey.Spacebar))
+      if (Console.KeyAvailable && InputHelper.ReadKey(ConsoleKey.Spacebar))
       {
         Sound.StopSound();
         break;
@@ -33,7 +33,7 @@ class AnimationHelper
       counter++;
       Thread.Sleep(100);
 
-      if (Console.KeyAvailable && InputHelper.LeerTecla(ConsoleKey.Spacebar))
+      if (Console.KeyAvailable && InputHelper.ReadKey(ConsoleKey.Spacebar))
       {
         Sound.StopSound();
         break;
@@ -65,7 +65,7 @@ class AnimationHelper
       counter++;
       Thread.Sleep(delay);
 
-      if (Console.KeyAvailable && InputHelper.LeerTecla(ConsoleKey.Spacebar))
+      if (Console.KeyAvailable && InputHelper.ReadKey(ConsoleKey.Spacebar))
       {
         Sound.StopSound();
         skip = true;

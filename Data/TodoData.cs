@@ -1,0 +1,6 @@
+namespace Data;
+
+class TodoData
+{
+
+}
