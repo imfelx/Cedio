@@ -1,3 +1,4 @@
+using Data;
 using Utils;
 
 namespace Screen;
@@ -6,11 +7,11 @@ public class ScreenMain
 {
   public const int ExitInput = 0;
 
-  public static void Main()
+  public static void Screen()
   {
     while (true)
     {
-      MainMenu.Screen(ExitInput);
+      MainScreen.Screen(ExitInput);
 
       int op = InputHelper.LeerOpcion();
 
@@ -21,6 +22,8 @@ public class ScreenMain
         string? confirm = Console.ReadLine()?.Trim().ToUpper();
         if (confirm == "S")
         {
+          if (IdeaData.ideas != new string[0]) IdeaData.Save();
+
           // AnimationHelper.LoadingAnimation("Guardando datos", 1.5);
           StyleConsole.Title("SALIENDO DEL PROGRAMA", 40);
           StyleConsole.WriteLine("¡Hasta pronto!", ConsoleColor.Green);
@@ -33,7 +36,7 @@ public class ScreenMain
         }
       }
 
-      MainMenu.Navigator(op);
+      MainScreen.Navigator(op);
     }
   }
 }

@@ -1,5 +1,6 @@
 ﻿using Utils;
 using Screen;
+using Data;
 
 internal class Program
 {
@@ -10,6 +11,8 @@ internal class Program
       StyleConsole.Error("No se podran reproducir los sonidos en este sistema operativo.");
     }
 
-    ScreenMain.Main();
+    IdeaData.Load();
+
+    ScreenMain.Screen();
   }
 }
