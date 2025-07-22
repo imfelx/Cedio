@@ -2,7 +2,7 @@ namespace Utils;
 
 class InputHelper
 {
-  public static int LeerOpcion()
+  public static int ReadOption()
   {
     string? input;
     int op;
@@ -17,7 +17,7 @@ class InputHelper
     return op;
   }
 
-  public static string LeerTexto(string texto, ConsoleColor color = ConsoleColor.Yellow)
+  public static string ReadString(string texto, ConsoleColor color = ConsoleColor.Yellow)
   {
     string? input;
 
@@ -31,7 +31,7 @@ class InputHelper
     return input;
   }
 
-  public static int LeerNumero(string texto, ConsoleColor color = ConsoleColor.Yellow)
+  public static int ReadNum(string texto, ConsoleColor color = ConsoleColor.Yellow)
   {
     string? input;
     int numero;
@@ -51,7 +51,7 @@ class InputHelper
     StyleConsole.WriteLine(text, ConsoleColor.Cyan);
     Console.ReadKey();
   }
-  public static bool LeerTecla(ConsoleKey key)
+  public static bool ReadKey(ConsoleKey key)
   {
     var keyInfo = Console.ReadKey(intercept: true);
     return keyInfo.Key == key;

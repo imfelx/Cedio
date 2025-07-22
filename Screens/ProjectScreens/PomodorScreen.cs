@@ -15,7 +15,7 @@ class PomodoroScreen
         break;
     }
   }
-  public static void MainScreen(int i)
+  public static void MainScreen()
   {
     while (true)
     {
@@ -23,7 +23,7 @@ class PomodoroScreen
       StyleConsole.Title($"Pomodoro");
       StyleConsole.Error($"{ScreenMain.ExitInput}. Volver");
 
-      int op = InputHelper.LeerOpcion();
+      int op = InputHelper.ReadOption();
 
       if (op == ScreenMain.ExitInput) break;
 

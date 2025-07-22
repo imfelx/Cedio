@@ -11,6 +11,9 @@ public static class MainScreen
       case 1:
         GeneratorServices.Generator();
         break;
+      case 2:
+        ProjectScreen.MainScreen();
+        break;
       default:
         StyleConsole.Error("Ninguna opcion es valida, intente nuevamente");
         break;
@@ -22,6 +25,7 @@ public static class MainScreen
     Console.Clear();
     StyleConsole.Title("MENÚ PRINCIPAL");
     StyleConsole.WriteLine("1. Generar Idea", ConsoleColor.Green);
+    StyleConsole.WriteLine("2. Proyectos", ConsoleColor.Green);
     StyleConsole.Error($"{exitInput}. Salir");
   }
 }

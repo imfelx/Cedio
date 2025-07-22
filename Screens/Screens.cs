@@ -13,7 +13,7 @@ public class ScreenMain
     {
       MainScreen.Screen(ExitInput);
 
-      int op = InputHelper.LeerOpcion();
+      int op = InputHelper.ReadOption();
 
       if (op == ExitInput)
       {
