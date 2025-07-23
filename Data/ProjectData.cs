@@ -12,9 +12,9 @@ class ProjectData
   {
     string projectsPath = Path.Combine(ProjectsPath, $"{i}");
 
-    if (!Directory.Exists(projectsPath))
+    if (!Directory.Exists(ProjectsPath))
     {
-      Directory.CreateDirectory(projectsPath);
+      Directory.CreateDirectory(ProjectsPath);
     }
     if (!Directory.Exists(projectsPath))
     {
@@ -34,7 +34,7 @@ class ProjectData
   public static string[] AddBitacora(string bit)
   {
 
-    if (bitacora == new string[0])
+    if (bitacora.Length == 0)
     {
       bitacora = new string[] { bit };
       return bitacora;
