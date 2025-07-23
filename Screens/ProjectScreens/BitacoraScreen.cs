@@ -5,35 +5,41 @@ using Utils;
 class BitacoraScreen
 {
   private static string[] bitacora = ProjectData.bitacora;
+  private static string[][] bitacoras = new string[0][];
 
   private static void AddBitacora()
   {
     StyleConsole.Title($"BITACORA {DateTime.Now}");
-    string bitacora = InputHelper.ReadString("Escribe tu bitacora", true);
+    string bit = InputHelper.ReadString("Escribe tu bitacora", true);
 
-    ProjectData.AddBitacora(bitacora);
+    bitacora = ProjectData.AddBitacora(bit);
   }
   private static void GetBitacoras()
   {
-    static void ShowBitacora(string[][] bit)
+    int pageSize = 25;
+    int currentPage = 0;
+    bitacoras = new string[bitacora.Length][];
+
+    int totalPages = (bitacoras.Length + pageSize - 1) / pageSize;
+
+    for (int i = 0; i < bitacora.Length; i++)
+    {
+      bitacoras[i] = bitacora[i].Split(" || ");
+    }
+
+    static void ShowBitacora()
     {
       int op;
       do
       {
         op = InputHelper.ReadNum("Ingresa el indice de la bitacora") - 1;
-      } while (op < 0 || op >= bit.Length);
+      } while (op < 0 || op >= bitacora.Length);
 
       Console.Clear();
-      StyleConsole.Title($"BITACORA {bit[op][0]}");
-      StyleConsole.WriteLine(bit[op][1]);
+      StyleConsole.Title($"BITACORA {bitacoras[op][0]}");
+      StyleConsole.WriteLine(bitacoras[op][1]);
       InputHelper.Continuar();
     }
-
-    string[][] bitacoras = ProjectData.GetBitacora();
-
-    int pageSize = 25;
-    int currentPage = 0;
-    int totalPages = (bitacoras.Length + pageSize - 1) / pageSize;
 
     while (true)
     {
@@ -50,9 +56,9 @@ class BitacoraScreen
       }
 
       StyleConsole.WriteLine($"\nPágina {currentPage + 1} de {totalPages}", ConsoleColor.Cyan);
-      StyleConsole.WriteLine("Presiona [Enter] para siguiente, [Backspace] para anterior, [Spacebar] para ver bitacora, [Esc] para salir.");
+      StyleConsole.WriteLine("Presiona [Spacebar] para siguiente, [Backspace] para anterior, [Enter] para ver bitacora, [Esc] para salir.");
 
-      if (InputHelper.ReadKey(ConsoleKey.Enter) && currentPage < totalPages - 1)
+      if (InputHelper.ReadKey(ConsoleKey.Spacebar) && currentPage < totalPages - 1)
       {
         currentPage++;
       }
@@ -60,9 +66,9 @@ class BitacoraScreen
       {
         currentPage--;
       }
-      else if (InputHelper.ReadKey(ConsoleKey.Spacebar))
+      else if (InputHelper.ReadKey(ConsoleKey.Enter))
       {
-        ShowBitacora(bitacoras);
+        ShowBitacora();
         break;
       }
       else if (InputHelper.ReadKey(ConsoleKey.Escape)) break;

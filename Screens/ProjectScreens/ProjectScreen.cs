@@ -4,14 +4,13 @@ using Utils;
 
 class ProjectScreen
 {
-  private static int i = ProjectData.ProjectsIndex;
-  private static string[] projects = IdeaData.ideas;
-
+  private static int project = ProjectData.ProjectsIndex;
+  private static string[] ideas = IdeaData.ideas;
   private static void ProjectsList()
   {
     int pageSize = 25;
     int currentPage = 0;
-    int totalPages = (projects.Length + pageSize - 1) / pageSize;
+    int totalPages = (ideas.Length + pageSize - 1) / pageSize;
 
     while (true)
     {
@@ -20,18 +19,18 @@ class ProjectScreen
       int start = currentPage * pageSize;
       int end = start + pageSize;
 
-      if (end > projects.Length) end = projects.Length;
+      if (end > ideas.Length) end = ideas.Length;
 
       for (int i = start; i < end; i++)
       {
-        StyleConsole.WriteLine($"{i + 1}: {projects[i]}", ConsoleColor.Green);
+        StyleConsole.WriteLine($"{i + 1}: {ideas[i]}", ConsoleColor.Green);
       }
 
       StyleConsole.WriteLine($"\nPágina {currentPage + 1} de {totalPages}", ConsoleColor.Cyan);
-      StyleConsole.WriteLine("Presiona [Enter] para siguiente, [Backspace] para anterior, [Esc] para salir.");
+      StyleConsole.WriteLine("Presiona [SpaceBar] para siguiente, [Backspace] para anterior, [Esc] para salir.");
 
 
-      if (InputHelper.ReadKey(ConsoleKey.Enter) && currentPage < totalPages - 1)
+      if (InputHelper.ReadKey(ConsoleKey.Spacebar) && currentPage < totalPages - 1)
       {
         currentPage++;
       }
@@ -66,8 +65,8 @@ class ProjectScreen
           ProjectsList();
           break;
         case 2:
-          i = InputHelper.ReadNum("Ingresa el indice del proyecto") - 1;
-          Console.WriteLine(i);
+          project = InputHelper.ReadNum("Ingresa el indice del proyecto") - 1;
+          ProjectData.Loadproject(project);
           end = true;
           break;
         default:
@@ -80,6 +79,7 @@ class ProjectScreen
       InputHelper.Continuar();
     }
   }
+
   private static void Navigator(int op)
   {
     Console.Clear();
@@ -91,31 +91,39 @@ class ProjectScreen
       case 2:
         BitacoraScreen.MainScreen();
         break;
+      case 3:
+        StyleConsole.Title("IDEA DEL PROYECTO");
+        StyleConsole.WriteLine($"{ideas[project]}\n", ConsoleColor.Green);
+        InputHelper.Continuar();
+        break;
       case 4:
         break;
       default:
         StyleConsole.Error("Ninguna opcion es valida, intente nuevamente");
         break;
     }
-    InputHelper.Continuar();
   }
   public static void MainScreen()
   {
     ChoseProject();
-    while (true)
+    while (project != -1)
     {
-      if (i == -1) break;
-
       Console.Clear();
-      StyleConsole.Title($"Proyecto {i + 1}");
+      StyleConsole.Title($"Proyecto {project + 1}");
       StyleConsole.WriteLine("1. Contador Pomodoro", ConsoleColor.Green);
       StyleConsole.WriteLine("2. Bitacora", ConsoleColor.Green);
+      StyleConsole.WriteLine("3. Ver Idea del Proyecto", ConsoleColor.Green);
       StyleConsole.WriteLine("4. Frase motivadora", ConsoleColor.Green);
       StyleConsole.Error($"{ScreenMain.ExitInput}. Volver");
 
       int op = InputHelper.ReadOption();
 
-      if (op == ScreenMain.ExitInput) break;
+      if (op == ScreenMain.ExitInput)
+      {
+        ProjectData.Saveproject(project);
+        ProjectData.ProjectsIndex = -1;
+        break;
+      }
 
       Navigator(op);
     }

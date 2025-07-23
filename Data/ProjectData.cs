@@ -1,3 +1,4 @@
+using System.Collections;
 using Utils;
 
 namespace Data;
@@ -8,7 +9,7 @@ class ProjectData
   public static int ProjectsIndex = -1;
   public static string[] bitacora = new string[0];
 
-  public static void Saveprojects(int i)
+  public static void Saveproject(int i)
   {
     string projectsPath = Path.Combine(ProjectsPath, $"{i}");
 
@@ -24,7 +25,7 @@ class ProjectData
     StorageHelper.Save(Path.Combine(projectsPath, "bitacora.txt"), bitacora);
   }
 
-  public static void Loadprojects(int i)
+  public static void Loadproject(int i)
   {
     string projectsPath = Path.Combine(ProjectsPath, $"{i}");
 
@@ -36,7 +37,7 @@ class ProjectData
 
     if (bitacora.Length == 0)
     {
-      bitacora = new string[] { bit };
+      bitacora = new string[] { $"{DateTime.Now} || {bit}" };
       return bitacora;
     }
 
@@ -52,17 +53,5 @@ class ProjectData
     bitacora = newArr;
 
     return bitacora;
-  }
-
-  public static string[][] GetBitacora()
-  {
-    string[][] bitacoras = new string[bitacora.Length][];
-
-    for (int i = 0; i < bitacora.Length; i++)
-    {
-      bitacoras[i] = bitacora[i].Split(" || ");
-    }
-
-    return bitacoras;
   }
 }
