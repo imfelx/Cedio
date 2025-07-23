@@ -21,7 +21,7 @@ class BitacoraScreen
       do
       {
         op = InputHelper.ReadNum("Ingresa el indice de la bitacora") - 1;
-      } while (op < -1 || op > bit.Length);
+      } while (op < 0 || op >= bit.Length);
 
       Console.Clear();
       StyleConsole.Title($"BITACORA {bit[op][0]}");
@@ -44,7 +44,7 @@ class BitacoraScreen
 
       Console.Clear();
       StyleConsole.Title("LISTA DE BITACORAS");
-      for (int i = 0; i < end; i++)
+      for (int i = start; i < end; i++)
       {
         StyleConsole.WriteLine($"{i + 1}: {bitacoras[i][0]}", ConsoleColor.Green);
       }
