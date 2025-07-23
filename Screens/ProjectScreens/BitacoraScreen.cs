@@ -15,13 +15,13 @@ class BitacoraScreen
   }
   private static void GetBitacoras()
   {
-    void ShowBitacora(string[][] bit)
+    static void ShowBitacora(string[][] bit)
     {
       int op;
       do
       {
         op = InputHelper.ReadNum("Ingresa el indice de la bitacora") - 1;
-      } while (op < -1 && op > bit.Length);
+      } while (op < -1 || op > bit.Length);
 
       Console.Clear();
       StyleConsole.Title($"BITACORA {bit[op][0]}");
@@ -90,8 +90,8 @@ class BitacoraScreen
     {
       Console.Clear();
       StyleConsole.Title("BITACORA");
-      StyleConsole.WriteLine("1.Agregar Bitacora del Dia");
-      StyleConsole.WriteLine("2.Ver bitacoras");
+      StyleConsole.WriteLine("1.Agregar Bitacora del Dia", ConsoleColor.Green);
+      StyleConsole.WriteLine("2.Ver bitacoras", ConsoleColor.Green);
       StyleConsole.Error($"{ScreenMain.ExitInput}. Volver");
 
       int op = InputHelper.ReadOption();

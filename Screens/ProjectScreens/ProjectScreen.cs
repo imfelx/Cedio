@@ -91,9 +91,6 @@ class ProjectScreen
       case 2:
         BitacoraScreen.MainScreen();
         break;
-      case 3:
-        TodoScreen.MainScreen();
-        break;
       case 4:
         break;
       default:
@@ -113,7 +110,6 @@ class ProjectScreen
       StyleConsole.Title($"Proyecto {i + 1}");
       StyleConsole.WriteLine("1. Contador Pomodoro", ConsoleColor.Green);
       StyleConsole.WriteLine("2. Bitacora", ConsoleColor.Green);
-      StyleConsole.WriteLine("3. Manejador de tareas", ConsoleColor.Green);
       StyleConsole.WriteLine("4. Frase motivadora", ConsoleColor.Green);
       StyleConsole.Error($"{ScreenMain.ExitInput}. Volver");
 
