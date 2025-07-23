@@ -9,7 +9,7 @@ class InputHelper
 
     do
     {
-      StyleConsole.Write("Ingresa un numero valido: ");
+      StyleConsole.Write("\nIngresa un numero valido: ");
       input = Console.ReadLine();
     }
     while (!int.TryParse(input, out op));
@@ -17,13 +17,14 @@ class InputHelper
     return op;
   }
 
-  public static string ReadString(string texto, ConsoleColor color = ConsoleColor.Yellow)
+  public static string ReadString(string texto, bool lineJump = false, ConsoleColor color = ConsoleColor.Yellow)
   {
     string? input;
 
     do
     {
-      StyleConsole.Write($"{texto}: ", color);
+      if (lineJump) StyleConsole.WriteLine($"{texto}: ", color);
+      else StyleConsole.Write($"{texto}: ", color);
       input = Console.ReadLine();
     }
     while (input == null || input.Trim() == "");
@@ -31,7 +32,7 @@ class InputHelper
     return input;
   }
 
-  public static int ReadNum(string texto, ConsoleColor color = ConsoleColor.Yellow)
+  public static int ReadNum(string texto, bool lineJump = false, ConsoleColor color = ConsoleColor.Yellow)
   {
     string? input;
     int numero;

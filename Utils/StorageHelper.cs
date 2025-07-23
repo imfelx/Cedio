@@ -3,9 +3,9 @@ namespace Utils;
 
 class StorageHelper
 {
-  public static void Save(string root, string[] lines)
+  public static void Save(string path, string[] lines)
   {
-    using (StreamWriter write = new StreamWriter(root, false, Encoding.UTF8))
+    using (StreamWriter write = new StreamWriter(path, false, Encoding.UTF8))
     {
       foreach (var line in lines)
       {
@@ -14,8 +14,8 @@ class StorageHelper
     }
   }
 
-  public static string[] Load(string root)
+  public static string[] Load(string path)
   {
-    return File.Exists(root) ? File.ReadAllLines(root, Encoding.UTF8) : new string[0];
+    return File.Exists(path) ? File.ReadAllLines(path, Encoding.UTF8) : new string[0];
   }
 }
