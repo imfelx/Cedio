@@ -3,7 +3,7 @@ using Utils;
 
 class TodoScreen
 {
-  public static void Navigator(int op)
+  private static void Navigator(int op)
   {
     Console.Clear();
     switch (op)

@@ -4,7 +4,7 @@ using Utils;
 
 class ProjectScreen
 {
-  private static int i = -1;
+  private static int i = ProjectData.ProjectsIndex;
   private static string[] projects = IdeaData.ideas;
 
   private static void ProjectsList()
@@ -66,7 +66,7 @@ class ProjectScreen
           ProjectsList();
           break;
         case 2:
-          i = InputHelper.ReadNum("Ingresa el indice del proyecto: ") - 1;
+          i = InputHelper.ReadNum("Ingresa el indice del proyecto") - 1;
           Console.WriteLine(i);
           end = true;
           break;
@@ -80,7 +80,7 @@ class ProjectScreen
       InputHelper.Continuar();
     }
   }
-  public static void Navigator(int op)
+  private static void Navigator(int op)
   {
     Console.Clear();
     switch (op)
