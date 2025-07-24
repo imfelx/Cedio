@@ -1,6 +1,0 @@
-namespace Data;
-
-class TodoData
-{
-
-}
