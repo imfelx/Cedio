@@ -95,6 +95,7 @@ class ProjectScreen
         TodoScreen.MainScreen();
         break;
       case 4:
+      FrasesService.Frases();
         break;
       default:
         StyleConsole.Error("Ninguna opcion es valida, intente nuevamente");

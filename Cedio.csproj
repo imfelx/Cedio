@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Spectre.Console" Version="0.50.0" />
     <PackageReference Include="System.Windows.Extensions" Version="9.0.7" />
   </ItemGroup>
 
