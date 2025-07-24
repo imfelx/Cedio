@@ -1,7 +1,7 @@
 using Screen;
 using Utils;
 
-class PomodoroScreen
+class TodoScreen
 {
   public static void Navigator(int op)
   {
