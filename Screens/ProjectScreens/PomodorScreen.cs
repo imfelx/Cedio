@@ -1,4 +1,5 @@
 using Screen;
+using Services;
 using Utils;
 
 class PomodoroScreen
@@ -9,6 +10,7 @@ class PomodoroScreen
     switch (op)
     {
       case 1:
+        PomodoroService.Pomodoro();
         break;
       default:
         StyleConsole.Error("Ninguna opcion es valida, intente nuevamente");
@@ -21,6 +23,7 @@ class PomodoroScreen
     {
       Console.Clear();
       StyleConsole.Title($"Pomodoro");
+      StyleConsole.WriteLine("1. Pomdoro", ConsoleColor.Green);
       StyleConsole.Error($"{ScreenMain.ExitInput}. Volver");
 
       int op = InputHelper.ReadOption();
