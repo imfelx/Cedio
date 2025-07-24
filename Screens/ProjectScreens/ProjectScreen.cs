@@ -1,5 +1,6 @@
 using Data;
 using Screen;
+using Services;
 using Utils;
 
 class ProjectScreen
@@ -86,7 +87,7 @@ class ProjectScreen
     switch (op)
     {
       case 1:
-        PomodoroScreen.MainScreen();
+        PomodoroService.Pomodoro();
         break;
       case 2:
         BitacoraScreen.MainScreen();
