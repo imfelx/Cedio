@@ -74,7 +74,7 @@ class AnimationHelper
     }
 
     string resultadoFinal = selected.PadRight(maxLength);
-    StyleConsole.Write($"\r{resultadoFinal}", endColor);
+    StyleConsole.Write($"\r{resultadoFinal}\n", endColor);
     if (!skip) Thread.Sleep(1000 * 2);
 
     return selected;
