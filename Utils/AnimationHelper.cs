@@ -2,7 +2,7 @@ namespace Utils;
 
 class AnimationHelper
 {
-  public static void LoadingAnimation(string text, double duration)
+  public static void LoadingAnimation(string text = "Cargando", double duration = 2)
   {
     int counter = 0;
     DateTime endTIme = DateTime.Now.AddSeconds(duration);
