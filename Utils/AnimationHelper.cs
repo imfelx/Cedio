@@ -2,7 +2,7 @@ namespace Utils;
 
 class AnimationHelper
 {
-  public static void LoadingAnimation(string text, double duration)
+  public static void LoadingAnimation(string text = "Cargando", double duration = 2)
   {
     int counter = 0;
     DateTime endTIme = DateTime.Now.AddSeconds(duration);
@@ -74,7 +74,7 @@ class AnimationHelper
     }
 
     string resultadoFinal = selected.PadRight(maxLength);
-    StyleConsole.Write($"\r{resultadoFinal}", endColor);
+    StyleConsole.Write($"\r{resultadoFinal}\n", endColor);
     if (!skip) Thread.Sleep(1000 * 2);
 
     return selected;

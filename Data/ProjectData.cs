@@ -1,4 +1,3 @@
-using System.Collections;
 using Utils;
 
 namespace Data;
@@ -9,9 +8,9 @@ class ProjectData
   public static int ProjectsIndex = -1;
   public static string[] bitacora = new string[0];
 
-  public static void Saveproject(int i)
+  public static void Saveproject()
   {
-    string projectsPath = Path.Combine(ProjectsPath, $"{i}");
+    string projectsPath = Path.Combine(ProjectsPath, $"{ProjectsIndex}");
 
     if (!Directory.Exists(ProjectsPath))
     {
@@ -27,7 +26,8 @@ class ProjectData
 
   public static void Loadproject(int i)
   {
-    string projectsPath = Path.Combine(ProjectsPath, $"{i}");
+    ProjectsIndex = i;
+    string projectsPath = Path.Combine(ProjectsPath, $"{ProjectsIndex}");
 
     bitacora = StorageHelper.Load(Path.Combine(projectsPath, "bitacora.txt"));
   }
