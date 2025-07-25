@@ -1,20 +1,30 @@
 "La innovación es lo que distingue a un líder de un seguidor."|Steve Jobs
-"Está bien celebrar el éxito, pero es más importante prestar atención a las lecciones del fracaso."|Bill Gates
-"Cuando algo es lo suficientemente importante, lo haces incluso si las probabilidades no están a tu favor."|Elon Musk
-"El mayor riesgo es no tomar ningún riesgo."|Mark Zuckerberg
-"Si no puedes tolerar las críticas, no hagas nada nuevo ni interesante."|Jeff Bezos
-"Si vamos a hacer algo revolucionario, pensémoslo en grande."|Larry Page
-"No te preocupes por fracasar. Solo tienes que estar en lo correcto una sola vez."|Drew Houston
-"Trabaja duro en silencio y deja que tu éxito haga el ruido."|Frank Ocean
-"Las ideas son fáciles. La implementación es lo que realmente importa."|Michael Dell
-"Mejor hecho que perfecto."|Sheryl Sandberg
-"El software es una gran combinación entre arte y ingeniería."|Bill Gates
-"La tecnología debe mejorar la vida de las personas."|Tim Cook
-"La mejor manera de predecir el futuro es inventarlo."|Alan Kay
+"El diseño no es sólo cómo se ve y se siente. El diseño es cómo funciona."|Steve Jobs
 "En la innovación, la simplicidad es la clave."|Steve Jobs
-"No sueñes tu vida, vive tu sueño."|Larry Ellison
-"La paciencia es amarga, pero su fruto es dulce."|Jeff Bezos
-"La creatividad es pensar en nuevas ideas. La innovación es hacerlas realidad."|Theodore Levitt
+"Está bien celebrar el éxito, pero es más importante prestar atención a las lecciones del fracaso."|Bill Gates
+"El software es una gran combinación entre arte y ingeniería."|Bill Gates
+"La paciencia es un elemento clave del éxito."|Bill Gates
+"Cuando algo es lo suficientemente importante, lo haces incluso si las probabilidades no están a tu favor."|Elon Musk
 "No tengas miedo de ser diferente, ten miedo de ser igual que todos los demás."|Elon Musk
-"La educación es el arma más poderosa para cambiar el mundo."|Nelson Mandela
-"La calidad significa hacer lo correcto cuando nadie está mirando."|Henry Ford
+"Algunas personas no les gusta el cambio, pero necesitas abrazarlo si la alternativa es el desastre."|Elon Musk
+"El mayor riesgo es no tomar ningún riesgo."|Mark Zuckerberg
+"Muévete rápido y rompe cosas. A menos que estés rompiendo cosas, no te estás moviendo lo suficientemente rápido."|Mark Zuckerberg
+"Las ideas necesitan espacio para crecer."|Mark Zuckerberg
+"Si no puedes tolerar las críticas, no hagas nada nuevo ni interesante."|Jeff Bezos
+"La marca para una empresa es como la reputación para una persona."|Jeff Bezos
+"Tu margen es mi oportunidad."|Jeff Bezos
+"Si vamos a hacer algo revolucionario, pensémoslo en grande."|Larry Page
+"Siempre ofrécete a trabajar en cosas que la gente cree que no puedes hacer."|Larry Page
+"No tengas miedo de soñar en grande y fallar en grande."|Larry Page
+"La tecnología debería hacer la vida más fácil, no más complicada."|Sergey Brin
+"La información está creciendo más rápido que la capacidad humana para procesarla."|Sergey Brin
+"La educación tiene que ser repensada radicalmente para la era digital."|Sergey Brin
+"La calidad significa hacer lo correcto cuando nadie está mirando."|Michael Dell
+"Las ideas son fáciles. La implementación es lo que realmente importa."|Michael Dell
+"La tecnología es mejor cuando une a las personas."|Matt Mullenweg
+"El futuro pertenece a quienes construyen."|Paul Graham
+"La mejor forma de aprender es haciendo."|Paul Graham
+"El poder real de la computación está en cómo transforma la mente humana."|Alan Kay
+"La mejor manera de predecir el futuro es inventarlo."|Alan Kay
+"Mejor hecho que perfecto."|Sheryl Sandberg
+"Habla con confianza, incluso si no estás completamente seguro. Hazlo hasta que lo estés."|Sheryl Sandberg

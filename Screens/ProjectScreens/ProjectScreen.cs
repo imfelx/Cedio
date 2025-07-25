@@ -97,7 +97,7 @@ class ProjectScreen
         InputHelper.Continuar();
         break;
       case 4:
-      FrasesService.Frases();
+        //FraseService.MostrarFraseAleatoria();
         break;
       default:
         StyleConsole.Error("Ninguna opcion es valida, intente nuevamente");

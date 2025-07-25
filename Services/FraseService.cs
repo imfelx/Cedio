@@ -1,16 +1,13 @@
 using System;
 using System.IO;
 
-class FrasesService
+public class FraseService
 {
-    private static string rutaArchivo = "frases.txt";
-    private static string[] lineas;
+    private static string rutaArchivo = "storage/frases.txt";
+     private static string[] lineas = new string[0];
 
-    public static void Frases()
+    public static void MostrarFraseAleatoria()
     {
-        Console.WriteLine("FRASES TECHNOLÓGICAS INSPIRADORAS\n");
-        Console.WriteLine("Presiona una tecla para ver cada frase en orden aleatorio...\n");
-
         if (!File.Exists(rutaArchivo))
         {
             Console.WriteLine("Error: No se encontró el archivo '" + rutaArchivo + "'.");
@@ -25,36 +22,17 @@ class FrasesService
             return;
         }
 
-        Barajar(lineas);
-
-        for (int i = 0; i < lineas.Length; i++)
-        {
-            string[] partes = lineas[i].Split('|');
-
-            if (partes.Length == 2)
-            {
-                string frase = partes[0].Trim();
-                string autor = partes[1].Trim();
-
-                Console.WriteLine("“" + frase + "”");
-                Console.WriteLine("– " + autor + " ");
-                Console.ReadKey(true);
-            }
-        }
-
-        Console.WriteLine("Fin de las frases.");
-    }
-
-    private static void Barajar(string[] arreglo)
-    {
         Random rand = new Random();
+        int idx = rand.Next(lineas.Length);
 
-        for (int i = arreglo.Length - 1; i > 0; i--)
+        string[] partes = lineas[idx].Split('|');
+        if (partes.Length == 2)
         {
-            int j = rand.Next(i + 1);
-            string temp = arreglo[i];
-            arreglo[i] = arreglo[j];
-            arreglo[j] = temp;
+            string frase = partes[0].Trim();
+            string autor = partes[1].Trim();
+
+            Console.WriteLine("“" + frase + "”");
+            Console.WriteLine("– " + autor + " ");
         }
     }
 }
