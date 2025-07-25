@@ -6,6 +6,9 @@ public class FraseService
     private static string rutaArchivo = "storage/frases.txt";
      private static string[] lineas = new string[0];
 
+
+/// Muestra una frase aleatoria del archivo 'frases.txt'.
+/// Si el archivo no existe o está vacío, muestra un mensaje de error.
     public static void MostrarFraseAleatoria()
     {
         if (!File.Exists(rutaArchivo))
